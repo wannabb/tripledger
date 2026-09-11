@@ -1,7 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:firebase_core/firebase_core.dart';
 
-/*테스트 테스트 테스트 */
-void main() {
+import 'firebase_options.dart';
+//flutter pub add PLUGIN_NAME
+//flutterfire configure -> flutter rebuild 필요
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
   runApp(const MyApp());
 }
 
